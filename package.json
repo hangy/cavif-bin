@@ -1,0 +1,49 @@
+{
+	"name": "cavif-bin",
+	"version": "0.1.0",
+	"description": "cavif wrapper that makes it seamlessly available as a local dependency",
+	"license": "MIT",
+	"repository": "hangy/cavif-bin",
+	"funding": "https://github.com/hangy/cavif-bin?sponsor=1",
+	"bin": {
+		"cavif": "cli.js"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"postinstall": "node lib/install.js",
+		"test": "xo && ava --timeout=120s"
+	},
+	"files": [
+		"cli.js",
+		"index.js",
+		"lib",
+		"vendor/source"
+	],
+	"keywords": [
+		"imagemin",
+		"compress",
+		"image",
+		"img",
+		"jpeg",
+		"jpg",
+		"minify",
+		"optimize",
+		"png",
+		"avif"
+	],
+	"dependencies": {
+		"bin-build": "^3.0.0",
+		"bin-wrapper": "^4.0.1",
+		"logalot": "^2.1.0"
+	},
+	"devDependencies": {
+		"ava": "^3.8.0",
+		"bin-check": "^4.1.0",
+		"compare-size": "^3.0.0",
+		"execa": "^4.0.3",
+		"tempy": "^0.7.1",
+		"xo": "^0.33.1"
+	}
+}
