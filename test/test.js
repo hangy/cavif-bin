@@ -14,8 +14,8 @@ test('rebuild the cavif binaries', async t => {
 
 	await binBuild
 		.file(path.resolve(__dirname, '../vendor/source/cavif-rs-0.6.3.tar.gz'), [
-			`./configure --disable-shared --prefix="${temporary}" --bindir="${temporary}"`,
-			'make && make install'
+			'cargo build --release',
+			`cp target/release/cavif "${temporary}/cavif"`
 		]);
 
 	t.true(fs.existsSync(path.join(temporary, 'cavif')));
