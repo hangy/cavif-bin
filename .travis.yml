@@ -7,3 +7,16 @@ os:
   - linux
   - osx
 osx_image: xcode11
+addons:
+  apt:
+    packages:
+    - nasm
+  snaps:
+    - name: rustup
+      confinement: classic
+  homebrew:
+    packages:
+    - rustup
+    - nasm
+before_install:
+  - if [ $TRAVIS_OS_NAME = linux ]; then rustup install stable && rustup default stable; else rustup-init -y; fi
